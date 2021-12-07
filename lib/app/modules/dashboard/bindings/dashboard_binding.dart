@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'package:shopping_app/app/data/providers/product_provider.dart';
 import 'package:shopping_app/app/modules/home/controllers/product_controller.dart';
 

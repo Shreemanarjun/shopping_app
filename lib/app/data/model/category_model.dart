@@ -34,7 +34,8 @@ class CategoryModel {
 
   String toJson() => json.encode(toMap());
 
-  factory CategoryModel.fromJson(String source) => CategoryModel.fromMap(json.decode(source));
+  factory CategoryModel.fromJson(String source) =>
+      CategoryModel.fromMap(json.decode(source));
 
   @override
   String toString() => 'CategoryModel(imagepath: $imagepath, label: $label)';
@@ -42,10 +43,10 @@ class CategoryModel {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is CategoryModel &&
-      other.imagepath == imagepath &&
-      other.label == label;
+        other.imagepath == imagepath &&
+        other.label == label;
   }
 
   @override

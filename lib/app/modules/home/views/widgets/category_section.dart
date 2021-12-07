@@ -1,6 +1,8 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:google_language_fonts/google_language_fonts.dart';
+
 import 'package:shopping_app/app/data/consts/category_list.dart';
 
 class CategorySection extends StatelessWidget {

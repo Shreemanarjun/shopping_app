@@ -64,7 +64,8 @@ class Productmodel {
 
   String toJson() => json.encode(toMap());
 
-  factory Productmodel.fromJson(String source) => Productmodel.fromMap(json.decode(source));
+  factory Productmodel.fromJson(String source) =>
+      Productmodel.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -74,26 +75,26 @@ class Productmodel {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Productmodel &&
-      other.id == id &&
-      other.title == title &&
-      other.price == price &&
-      other.description == description &&
-      other.category == category &&
-      other.image == image &&
-      other.rating == rating;
+        other.id == id &&
+        other.title == title &&
+        other.price == price &&
+        other.description == description &&
+        other.category == category &&
+        other.image == image &&
+        other.rating == rating;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      title.hashCode ^
-      price.hashCode ^
-      description.hashCode ^
-      category.hashCode ^
-      image.hashCode ^
-      rating.hashCode;
+        title.hashCode ^
+        price.hashCode ^
+        description.hashCode ^
+        category.hashCode ^
+        image.hashCode ^
+        rating.hashCode;
   }
 }
 
@@ -139,10 +140,8 @@ class Rating {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
-    return other is Rating &&
-      other.rate == rate &&
-      other.count == count;
+
+    return other is Rating && other.rate == rate && other.count == count;
   }
 
   @override

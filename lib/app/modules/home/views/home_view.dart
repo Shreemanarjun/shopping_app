@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:shopping_app/app/modules/home/views/widgets/category_section.dart';
 import 'package:shopping_app/app/modules/home/views/widgets/custom_appbar.dart';
 import 'package:shopping_app/app/modules/home/views/widgets/productsgridview.dart';

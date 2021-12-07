@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'package:shopping_app/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:shopping_app/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:shopping_app/app/modules/login/views/loginview_view.dart';

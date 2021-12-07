@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:shopping_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 
+import 'package:get/get.dart';
+
+import 'package:shopping_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 
 class Custombottomnavbar extends StatelessWidget {
   Custombottomnavbar({

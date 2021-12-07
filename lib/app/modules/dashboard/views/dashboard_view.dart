@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
+
 import 'package:shopping_app/app/modules/dashboard/views/widgets/customnavbar.dart';
 import 'package:shopping_app/app/modules/home/views/home_view.dart';
 import 'package:shopping_app/app/modules/profile/profile_view.dart';
