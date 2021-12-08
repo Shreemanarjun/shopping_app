@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:get/get.dart';
-import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
-import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
+import 'package:google_language_fonts/google_language_fonts.dart';
 
 import 'package:shopping_app/app/modules/home/controllers/product_controller.dart';
 
@@ -17,8 +16,7 @@ class ProductGridView extends GetView<ProductController> {
     return Center(
       child: controller.obx(
           (products) => products != null
-              ? StaggeredGridView.countBuilder(
-                  crossAxisCount: 4,
+              ? GridView.builder(
                   physics: const ClampingScrollPhysics(
                       parent: ClampingScrollPhysics()),
                   itemCount: products.length,
@@ -31,36 +29,74 @@ class ProductGridView extends GetView<ProductController> {
                         child: Column(
                           children: [
                             Expanded(
-                              flex: 2,
+                              flex: 3,
                               child: Image.network(
                                 product.image,
                               ),
                             ),
                             Expanded(
+                                flex: 2,
                                 child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Wrap(
-                                children: [
-                                  Column(
+                                  padding: const EdgeInsets.only(top: 16),
+                                  child: Wrap(
                                     children: [
-                                      AutoSizeText(
-                                          product.title.substring(0, 12)),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text("\$ ${product.price}"),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          AutoSizeText(
+                                            product.title.substring(0, 12),
+                                            style: GoogleFonts.getFont(
+                                              'Lato',
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 4),
+                                            child: Text(
+                                              "\$ ${product.price}",
+                                              style: GoogleFonts.getFont('Lato',
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.green),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 4),
+                                            child: Text(
+                                              "Category : ${product.category}",
+                                              style: GoogleFonts.getFont(
+                                                'Lato',
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 4, bottom: 8),
+                                            child: Text(
+                                              "Rating : ${product.rating.rate} (${product.rating.count})",
+                                              style: GoogleFonts.getFont(
+                                                'Lato',
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                ],
-                              ),
-                            )),
+                                )),
                           ],
                         ),
                       ),
                     );
                   },
-                  staggeredTileBuilder: (int index) =>
-                      const StaggeredTile.count(2, 2),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, childAspectRatio: 0.8),
                 )
               : const Center(
                   child: Text("No Products"),

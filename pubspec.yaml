@@ -15,7 +15,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   auto_size_text: ^3.0.0
   settings_ui: ^1.0.0
-  staggered_grid_view_flutter: ^0.0.4
+  
 
 
 dev_dependencies: 
